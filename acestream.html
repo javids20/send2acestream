@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send to AceStream</title>
+</head>
+<body>
+	<script language="Javascript">
+		var params = new URLSearchParams(location.search);
+		var parametro = params.get('acestream');
+		
+		expresion = /[0-9a-zA-Z]{40,1000}/g;
+		
+		acestreams = parametro.match(expresion);
+		
+		//document.write(acestreams);
+		//document.write('<br/><br/>');
+		
+		n = acestreams.length;
+		i = 0;
+		
+		//document.write('<br/><br/>longitud ' + n + '<br/><br/>');
+		//document.write(acestreams + '<br/><br/>');
+
+		document.write('Pincha en los enlaces para abrirlos automáticamente en AceStream<br/><br/>');
+		while (i < n) {
+			acestream = acestreams[i];
+			document.write('<a href="acestream://' + acestream + '">' + acestream + '</a>');
+			document.write('<br/><br/>');
+			i ++;
+		}
+	</script>
+	
+	<br/><br/>
+	<div>
+		<form action="./acestream.html" method="get">
+			<p>
+			<textarea name="acestream" rows="3" cols="30"></textarea><br/>
+			</p>
+			<p>
+			<input type="submit" value="Send2AceStream">
+			</p>
+		</form>
+	</div>
+	
+	a*_aa167e3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175
+		
+</body>
+</html>
