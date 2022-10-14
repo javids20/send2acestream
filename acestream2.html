@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send to AceStream</title>
+</head>
+<body>
+	<script language="Javascript">
+		var params = new URLSearchParams(location.search);
+		var parametro = params.get('acestream');
+		
+		expresion = /[0-9a-zA-Z]{40,1000}/g;
+		
+		acestreams = parametro.match(expresion);
+		
+		//document.write(acestreams);
+		//document.write('<br/><br/>');
+		
+		n = acestreams.length;
+		i = 0;
+		
+		//document.write('<br/><br/>longitud ' + n + '<br/><br/>');
+		//document.write(acestreams + '<br/><br/>');
+
+		document.write('Pincha en los enlaces para abrirlos automáticamente en AceStream<br/><br/>');
+		while (i < n) {
+			
+			acestream = acestreams[i];
+			if (acestream.length == 40){
+				acestream_href = '<br/><a href="acestream://' + acestream + '">' + acestream + '<br/></a>';
+				//document.write(acestream_href);
+				//document.write('<br/><br/>');
+				parametro = parametro.replaceAll(acestream, acestream_href);
+				document.write(parametro);
+				document.write('<br/><br/>');
+			}
+			i ++;
+		}
+		//document.write(parametro);
+	</script>
+	
+	<br/><br/>
+	<div>
+		<form action="./acestream2.html" method="get">
+			<p>
+			<textarea name="acestream" rows="3" cols="30"></textarea><br/>
+			</p>
+			<p>
+			<input type="submit" value="Send2AceStream">
+			</p>
+		</form>
+	</div>
+	
+	a*_aaaa167eddd3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175 167e3b44a520cd76d4372f6d30fe6d7ccd524175
+		
+</body>
+</html>
