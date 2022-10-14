@@ -4,10 +4,11 @@
   <title>Send to AceStream</title>
 </head>
 <body>
-	1.03<br/>
+	1.04<br/>
 	<script language="Javascript">
 		var params = new URLSearchParams(location.search);
 		var parametro = params.get('acestream');
+		parametro = parametro.replaceAll("___", " ");
 		
 		expresion = /[0-9a-zA-Z]{40,1000}/g;
 		
@@ -21,6 +22,10 @@
 		
 		//document.write('<br/><br/>longitud ' + n + '<br/><br/>');
 		//document.write(acestreams + '<br/><br/>');
+		
+		if (n == 0){
+		
+		}
 
 		document.write('Pincha en los enlaces para abrirlos automáticamente en AceStream<br/><br/>');
 		while (i < n) {
