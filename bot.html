@@ -4,7 +4,7 @@
   <title>Send to AceStream</title>
 </head>
 <body>
-	(1.09) 
+	(1.10) 
 	<script language="Javascript">
 		var params = new URLSearchParams(location.search);
 		var parametro = params.get('acestream');
@@ -32,8 +32,10 @@
 			}
 			document.write(parametro);
 			
-			if (n== 1){
-				location.href = acestream_href;
+			if (n == 1){
+				acestream_location = 'acestream://' + acestream;
+				//document.write(acestream_location);
+				location.href = acestream_location;
 			}else{
 				document.write("<br/><br/>Truco: Si solo envías un enlace desde el bot, este se cargará automáticamente sin tocar ningún botón en AceStream");
 			}
